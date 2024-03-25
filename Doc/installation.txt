@@ -51,3 +51,9 @@ kubectl get all
 
 kubectl --namespace jupyterhub get service proxy-public
 
+### Create jindo image docker
+
+#download latest jindo https://github.com/aliyun/aliyun-emapreduce-datasources/tree/main/jars/datasources/latest
+
+# create dockerfile and build image
+
