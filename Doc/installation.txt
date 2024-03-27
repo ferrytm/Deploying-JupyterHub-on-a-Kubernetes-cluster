@@ -1,6 +1,6 @@
 
 ## Installation
-#This documentation provides instructions for setting up PostgreSQL and MySQL databases using Docker.
+#This documentation provides instructions for setting up Jupiter hub.
 
 #Follow these steps to install minikube on your system:
 #1. Follow installation guide of minikube(https://minikube.sigs.k8s.io/docs/start/)
