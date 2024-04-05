@@ -82,3 +82,9 @@ service/proxy-public   LoadBalancer   10.59.26.167   35.224.171.66   80:30870/TC
 # create dockerfile and build image
 #Use the Docker CLI to build the Docker image using the Dockerfile created in the previous step.
 
+docker build -t sparkjindo .
+
+#verify build
+
+docker run -p 8888:8888 sparkjindo
+
