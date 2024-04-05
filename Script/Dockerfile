@@ -1,10 +1,11 @@
-FROM jupyter/pyspark-notebook
+# Use a base image with Apache Spark and Jupyter installed
+FROM jupyter/pyspark-notebook:latest
 
-# Install JIndo SDK dependencies
-RUN pip install --upgrade pip
-RUN pip install jindofs
+# Install JIndo SDK
+RUN pip install --upgrade pip && \
+    pip install jindo-sdk
+	
 
-# Expose port for Jupyter notebook
+
+# Expose necessary ports for Jupyter notebook server
 EXPOSE 8888
-
-COPY ../Source/* .

@@ -2,8 +2,30 @@
 ## Installation
 #This documentation provides instructions for setting up Jupiter hub.
 
-#Follow these steps to install minikube on your system:
-#1. Follow installation guide of minikube(https://minikube.sigs.k8s.io/docs/start/)
+#Set Up a GCP Account:
+#If you haven't already, sign up for a GCP account at https://cloud.google.com/ and create a project.
+
+#Enable Kubernetes Engine API:
+#Go to the GCP Console, navigate to the Kubernetes Engine page, and enable the Kubernetes Engine API for your project.
+
+#Install Google Cloud SDK:
+#Install the Google Cloud SDK on your local machine. You can follow the instructions provided here: https://cloud.google.com/sdk/docs/install.
+
+#Set Up gcloud CLI:
+#Initialize gcloud by running gcloud init command and follow the instructions to authenticate and set the default project.
+
+gcloud init
+
+#Create a Kubernetes Cluster:
+#Use the following command to create a Kubernetes cluster:
+
+gcloud container clusters create taskcluster-ferry --num-nodes=3 --zone=asia-southeast1-a
+
+#Configure kubectl:
+#Run the following command to configure kubectl to use your newly created cluster:
+
+gcloud container clusters get-credentials taskcluster-ferry --zone asia-southeast1-a
+
 
 
 #Follow these steps to install Docker Desktop on your system:
@@ -49,11 +71,14 @@ helm search repo jupyterhub
 
 kubectl get all
 
-kubectl --namespace jupyterhub get service proxy-public
+service/proxy-public   LoadBalancer   10.59.26.167   35.224.171.66   80:30870/TCP
+
+#You can access jupyterhub via browser http://35.224.171.66
 
 ### Create jindo image docker
 
 #download latest jindo https://github.com/aliyun/aliyun-emapreduce-datasources/tree/main/jars/datasources/latest
 
 # create dockerfile and build image
+#Use the Docker CLI to build the Docker image using the Dockerfile created in the previous step.
 
